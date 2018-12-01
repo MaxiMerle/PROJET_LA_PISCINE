@@ -1,0 +1,107 @@
+{% extends '@App/base.html.twig' %}
+
+{% block titre %}
+    Course n*{{ course.id }}
+{% endblock %}
+
+
+
+{% block block1 %}
+
+
+    {#  Message flash pour l'ajout d'une course#}
+    {% for message in app.flashes('commentaire') %}
+        <div class="alert alert-success" role="alert">
+            <div class="flash-notice">
+                <div class="col-12 text-center">
+                    {{ message }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="container-fluid" >
+        <div class="row">
+            <div class="col-12 text-center">
+                <div style="width: 100%"><iframe  class="map" width="100%" height="400" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=48.8653796,2.3362337&amp;q=21%20rue%20moliere+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+                <div class="col-12" id="block-affiche">
+                    <h1 class="text-center">Course n*{{ course.id }}</h1>
+                    <button class="btn btn-outline-dark">Contacter le client</button>
+                    <button class="btn btn-outline-success">Accepter la course</button>
+                    <h3 class="mt-3">Prix de la course : {{ course.prix }} € </h3>
+                    <h4>Livraison pour le  <strong>{{ course.dateLivraison|localizeddate('none', 'none', null, null, 'd MMMM Y ')}}</strong></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5 blockcourse">
+        <div class="row">
+            <div class="col-4">
+                <p>Posté par : <strong>{{ course.user.name }}</strong> </p>
+            </div>
+            <div class="col-4">Le :  <strong>{{ course.createdAt|localizeddate('none', 'none', null, null, 'd MMMM Y')}}</strong> </div>
+            <div class="col-4">A : <strong>{{ course.ville.nom }}</strong> </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <hp>Liste de course : <strong>{{ course.description }}</strong> </hp>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-6">
+                <p>Adresse de départ : <strong>{{ course.adresseDepart }}</strong> </p>
+            </div>
+            <div class="col-6">
+                <p>Adresse Arrivée : <strong>{{ course.adresseArrivee }}</strong></p>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <h3>Discussion</h3>
+        </div>
+        {% for commentaire in commentairesCourses  %}
+        <div class="row mt-3 mb-3">
+            <div class="col-1">
+                <div class="thumbnail">
+                    <img class="img-fluid user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                </div>
+            </div>
+            <div class="col-5">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <strong>{{ commentaire.user.username }}</strong> <span class="text-muted">à commenté le {{ commentaire.createdAt|localizeddate('none', 'none', null, null, 'd MMMM Y')}}</span>
+                    </div>
+                    <div class="panel-body">
+                        {{ commentaire.contenu}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <hr>
+        <div class="row">
+            {{ form_start(formCommentaires, {"attr" : {"class": "col-12"}}) }}
+            <div class="col-12 text-center">
+                <h2 class="text-center">Ajouter un commentaire</h2>
+                <div class="form-group">
+                    <div class="input-group mb-2">
+                        {{ form_widget(formCommentaires.contenu, {"attr" : {"class": "form-control col-12"}}) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-outline-success btn-block float-right mt-2">Commenter</button>
+                </div>
+            </div>
+            {{ form_end(formCommentaires) }}
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

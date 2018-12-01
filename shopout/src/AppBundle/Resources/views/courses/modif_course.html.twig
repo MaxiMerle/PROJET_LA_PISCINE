@@ -1,0 +1,72 @@
+{% extends '@App/base.html.twig' %}
+
+{% block block1 %}
+
+
+    {#  Message flash pour l'ajout d'une course#}
+    {% for message in app.flashes('notice') %}
+        <div class="alert alert-danger" role="alert">
+            <div class="flash-notice">
+                <div class="col-12 text-center"> {{ message }}</div>
+            </div>
+        </div>
+
+    {% endfor %}
+
+
+    <div class="container">
+        <div class="row mt-5 mb-5">
+            <div class="col-12">
+                <h1 class="text-center">Modifier une course</h1>
+            </div>
+            <div class="offset-2 col-8 offset-2">
+
+                {{ form_start(formCourses) }}
+                <div class="form-group">
+                    {{ form_label(formCourses.nom, 'Nom', {'label_attr': {'class': 'labelClass'}}) }}
+                    {{ form_widget(formCourses.nom, {"attr" : {"class": "form-control"}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(formCourses.ville) }}
+                    {{ form_widget(formCourses.ville, {"attr" : {"class": "form-control"}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(formCourses.prix) }}
+                    {{ form_widget(formCourses.prix, {"attr" : {"class": "form-control"}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(formCourses.description) }}
+                    {{ form_widget(formCourses.description, {"attr" : {"class": "form-control"}}) }}
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-6">
+                            {{ form_label(formCourses.adresseArrivee) }}
+                            {{ form_widget(formCourses.adresseArrivee, {"attr" : {"class": "form-control"}}) }}
+                        </div>
+                        <div class="col-6">
+                            {{ form_label(formCourses.adresseDepart) }}
+                            {{ form_widget(formCourses.adresseDepart, {"attr" : {"class": "form-control"}}) }}
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(formCourses.dateLivraison) }}
+                    {{ form_widget(formCourses.dateLivraison, {"attr" : {"class": "form-control"}}) }}
+                </div>
+
+
+                <div class="form-group">
+                    {{ form_label(formCourses.save) }}
+                    {{ form_widget(formCourses.save, {"attr" : {"class": "btn btn-outline-success float-right"}}) }}
+                </div>
+                {{ form_end(formCourses) }}
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

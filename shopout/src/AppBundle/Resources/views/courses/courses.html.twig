@@ -1,0 +1,73 @@
+{% extends '@App/base.html.twig' %}
+
+{% block titre %}
+    Les courses
+{% endblock %}
+
+
+
+{% block block1 %}
+    {#  Message flash pour l'ajout d'une course#}
+    {% for message in app.flashes('notice') %}
+        <div class="alert alert-success" role="alert">
+            <div class="flash-notice">
+                <div class="col-12 text-center">
+                    {{ message }}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <div class="container-fluid" id="block-courses">
+        <div class="row mb-5 courses d-flex align-items-center">
+            <div class="col-12 text-center">
+                <h1>Toutes les courses</h1>
+
+                {% for ville in villes  %}
+                    <a href="{{ path('ville',{'idVille' : ville.id }) }}" class="ml-5"><button type="button" class="btn btn-lg btn-outline-danger">{{ ville.nom }}</button></a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="block-courses">
+        <div class="row">
+            <h3>Toutes les courses à  </h3>
+            {% for ville in villes  %}
+               </h3><a href="{{ path('ville',{'idVille' : ville.id }) }}"><h3>&nbsp; {{ ville.nom }} /</a></h3>
+
+            {% endfor %}
+        </div>
+        <div class="row mt-5 mb-5">
+            {% for course in courses  %}
+            <div class="col-sm-12 col-md-4 block mt-3">
+                <div class="thumbnail">
+                    <div style="width: 100%" class="map map-container"><iframe  scrolling="no" width="100%" height="200" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=48.8653796,2.3362337&amp;q=21%20rue%20moliere+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" marginheight="0" marginwidth="0"></iframe></div><br />
+                    <div class="caption p-2">
+                        <h3>{{ course.nom }}</h3>
+                        <p>Publié le : {{ course.createdAt|localizeddate('none', 'none', null, null, 'd MMMM Y')}}</p>
+                        <hr>
+                        <p>Ville : {{ course.ville.nom }}</p>
+                        <p>Date livraison :  {{ course.dateLivraison|localizeddate('none', 'none', null, null, 'd MMMM Y')}}</p>
+                        <p>Départ : {{ course.adresseDepart }} </p>
+                        <p>Arrivée : {{ course.adresseArrivee }} </p>
+                        <p>Description : {{ course.description }}</p>
+                        <a href="#" class="badge  badge-lg badge-secondary">Prix : {{ course.prix }} €</a>
+                        <p class="text-center"><a href="{{ path('show_course',{'id' : course.id}) }}" class="btn btn-primary" role="button">Voir plus</a> <a href="#" class="btn btn-danger" role="button">Accepter la course</a></p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <script>
+        $('.map-container')
+            .click(function(){
+                $(this).find('iframe').addClass('clicked')})
+            .mouseleave(function(){
+                $(this).find('iframe').removeClass('clicked')});
+    </script>
+
+{% endblock %}

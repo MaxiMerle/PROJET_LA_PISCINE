@@ -1,0 +1,210 @@
+
+$rouge : #e74c3c;
+$TypoTitre : 'Permanent Marker', cursive;
+.TypoTitre {
+  font-family: 'Permanent Marker', cursive;
+  color: $rouge;
+  font-size: 6vw;
+}
+
+@import "_footer.css";
+@import "owl.carousel.css";
+
+body{
+  margin-left: -15px;
+  margin-right: -15px;
+  overflow-x: hidden;
+  font-family: 'Nunito', sans-serif;
+
+}
+
+a{
+
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+h1 {
+  @extend .TypoTitre;
+}
+
+
+#menu,#footer{
+  background-color: $rouge;
+  color: white;
+
+  a{
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bolder;
+
+    &:hover{
+
+      color:#34495e;
+    }
+  }
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+  background-color: $rouge;
+}
+
+/* ---------------------------- PAGE HOME -------------------------------------
+
+------------------------------------------------------------------------------*/
+
+
+/* BLOCK 1 - HOME */
+
+
+#block1{
+  background-image: url('../../assets/img/fond.jpg');
+  background-size: cover;
+  height: 700px;
+
+   h1 {
+    @extend .TypoTitre;
+    text-align: center;
+    margin-top: 200px;
+
+     }
+   p {
+    color: #fff;
+   }
+  h5{
+    color: white;
+  }
+}
+
+
+/* BLOCK 2 - HOME */
+
+
+#block2 {
+  h2{
+    font-family: "Permanent Marker", cursive;
+    font-size: 60px;
+  }
+  background-color: #e74c3c;
+  text-align: center;
+  color: #fff;
+  padding: 100px 100px 100px 100px;
+
+}
+
+
+/* BLOCK 3 - HOME */
+
+#block3{
+  background-color: #292c2f;
+  color: white;
+
+  div.col-2{
+    padding: 30px;
+  }
+
+
+  h3{
+    font-family: $TypoTitre;
+    color: $rouge;
+
+  }
+  img{
+    margin-bottom: 25px;
+  }
+}
+
+/* BLOCK 3 - HOME */
+
+#block4{
+
+
+
+}
+
+
+
+
+
+/* ---------------------------- PAGE COURSES -------------------------------------
+
+------------------------------------------------------------------------------*/
+
+
+
+#block-courses {
+
+  .thumbnail {
+    border: 2px $rouge solid;
+    border-radius: 5px;
+
+    a {
+      color: white;
+    }
+
+    h1 {
+      @extend .TypoTitre
+    }
+
+  }
+}
+
+
+.courses{
+
+  background-image: url("../../assets/img/courses.jpeg");
+  background-size: cover;
+  height: 600px;
+
+
+
+}
+
+.courses-ajout{
+
+  background-image: url("../../assets/img/ajout.jpeg");
+  background-size: cover;
+  height: 600px;
+
+
+
+}
+
+
+
+/* ---------------------------- PAGE CONTACT -------------------------------------
+
+------------------------------------------------------------------------------*/
+
+
+.titre{
+  background-image: url("../../assets/img/contact.jpeg");
+  height: 400px;
+  background-size: cover;
+
+  h1{
+    @extend .TypoTitre;
+    text-align: center;
+  }
+}
+
+
+
+
+
+.titreh2{
+  font-family: "Permanent Marker", cursive;
+  color: $rouge;
+}
+
+
+
+
+
+
+
+/* ---------------------------- PAGE LOGIN -------------------------------------
+
+------------------------------------------------------------------------------*/

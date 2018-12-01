@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/shopout/src/AppBundle" isTestSource="false" packagePrefix="AppBundle\" />
+      <sourceFolder url="file://$MODULE_DIR$/shopout/tests" isTestSource="true" packagePrefix="Tests\" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/doctrine/annotations" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/doctrine/collections" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/doctrine/common" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/doctrine/doctrine-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/doctrine/doctrine-cache-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/doctrine/orm" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/fig/link-util" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/friendsofsymfony/user-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/incenteev/composer-parameter-handler" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/jdorn/sql-formatter" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/paragonie/random_compat" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/psr/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/psr/link" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/sensio/distribution-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/sensio/framework-extra-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/sensio/generator-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/sensiolabs/security-checker" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/swiftmailer/swiftmailer" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/symfony/monolog-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/symfony/phpunit-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/symfony/polyfill-apcu" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/symfony/polyfill-intl-icu" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/symfony/polyfill-php56" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/symfony/polyfill-php70" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/symfony/polyfill-util" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/symfony/swiftmailer-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/symfony/symfony" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/twig/extensions" />
+      <excludeFolder url="file://$MODULE_DIR$/shopout/vendor/twig/twig" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="jquery-3.3.1" level="application" />
+    <orderEntry type="module-library">
+      <library name="PHP" type="php">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/shopout/vendor/composer" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/doctrine/annotations" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/doctrine/cache" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/doctrine/collections" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/doctrine/common" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/doctrine/dbal" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/doctrine/doctrine-bundle" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/doctrine/doctrine-cache-bundle" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/doctrine/inflector" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/doctrine/instantiator" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/doctrine/lexer" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/doctrine/orm" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/fig/link-util" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/friendsofsymfony/user-bundle" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/incenteev/composer-parameter-handler" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/jdorn/sql-formatter" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/monolog/monolog" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/paragonie/random_compat" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/psr/cache" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/psr/container" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/psr/link" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/psr/log" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/psr/simple-cache" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/sensio/distribution-bundle" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/sensio/framework-extra-bundle" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/sensio/generator-bundle" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/sensiolabs/security-checker" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/swiftmailer/swiftmailer" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/symfony/monolog-bundle" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/symfony/phpunit-bridge" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/symfony/polyfill-apcu" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/symfony/polyfill-ctype" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/symfony/polyfill-intl-icu" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/symfony/polyfill-mbstring" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/symfony/polyfill-php56" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/symfony/polyfill-php70" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/symfony/polyfill-util" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/symfony/swiftmailer-bundle" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/symfony/symfony" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/twig/extensions" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/twig/twig" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/shopout/vendor/composer" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/doctrine/annotations" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/doctrine/cache" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/doctrine/collections" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/doctrine/common" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/doctrine/dbal" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/doctrine/doctrine-bundle" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/doctrine/doctrine-cache-bundle" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/doctrine/inflector" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/doctrine/instantiator" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/doctrine/lexer" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/doctrine/orm" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/fig/link-util" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/friendsofsymfony/user-bundle" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/incenteev/composer-parameter-handler" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/jdorn/sql-formatter" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/monolog/monolog" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/paragonie/random_compat" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/psr/cache" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/psr/container" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/psr/link" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/psr/log" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/psr/simple-cache" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/sensio/distribution-bundle" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/sensio/framework-extra-bundle" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/sensio/generator-bundle" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/sensiolabs/security-checker" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/swiftmailer/swiftmailer" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/symfony/monolog-bundle" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/symfony/phpunit-bridge" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/symfony/polyfill-apcu" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/symfony/polyfill-ctype" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/symfony/polyfill-intl-icu" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/symfony/polyfill-mbstring" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/symfony/polyfill-php56" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/symfony/polyfill-php70" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/symfony/polyfill-util" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/symfony/swiftmailer-bundle" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/symfony/symfony" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/twig/extensions" />
+          <root url="file://$MODULE_DIR$/shopout/vendor/twig/twig" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="PHARS">
+        <CLASSES>
+          <root url="phar://$MODULE_DIR$/shopout/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/includes/ProjectWithXsdExtensionInPhar.phar/" />
+          <root url="phar://$MODULE_DIR$/shopout/vendor/symfony/symfony/src/Symfony/Bridge/PhpUnit/Tests/DeprecationErrorHandler/deprecation.phar/" />
+          <root url="phar://$MODULE_DIR$/shopout/vendor/twig/twig/test/Twig/Tests/Loader/Fixtures/phar/phar-sample.phar/" />
+          <root url="phar://$MODULE_DIR$/shopout/vendor/symfony/phpunit-bridge/Tests/DeprecationErrorHandler/deprecation.phar/" />
+        </CLASSES>
+        <SOURCES>
+          <root url="phar://$MODULE_DIR$/shopout/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Tests/Fixtures/includes/ProjectWithXsdExtensionInPhar.phar/" />
+          <root url="phar://$MODULE_DIR$/shopout/vendor/symfony/symfony/src/Symfony/Bridge/PhpUnit/Tests/DeprecationErrorHandler/deprecation.phar/" />
+          <root url="phar://$MODULE_DIR$/shopout/vendor/twig/twig/test/Twig/Tests/Loader/Fixtures/phar/phar-sample.phar/" />
+          <root url="phar://$MODULE_DIR$/shopout/vendor/symfony/phpunit-bridge/Tests/DeprecationErrorHandler/deprecation.phar/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+  </component>
+</module>

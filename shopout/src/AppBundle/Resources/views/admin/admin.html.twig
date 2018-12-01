@@ -1,0 +1,57 @@
+{% extends '@App/base.html.twig' %}
+
+{% block titre %}
+    Les courses
+{% endblock %}
+
+
+
+{% block block1 %}
+    {#  Message flash pour l'ajout d'une course#}
+    {% for message in app.flashes('notice') %}
+        <div class="alert alert-success" role="alert">
+            <div class="flash-notice">
+                <div class="col-12">
+                    {{ message }}
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+
+    <div class="container" id="block-courses">
+        <div class="row">
+            <h1 class=" col-12 text-center">Toutes les courses</h1>
+
+        </div>
+        <div class="row mt-5 mb-5">
+            {% for course in courses  %}
+                <div class="col-sm-12 col-md-12  mt-3">
+                    <div class="">
+                        <div class="row">
+                            <div class="col-7 p-2">
+                                <h3>{{ course.nom }}</h3>
+                                <p>Ville : {{ course.ville.nom }}</p>
+                                <p>Date :  {{ course.dateLivraison|date('D d M Y')}}</p>
+                                <p>Adresse Départ : {{ course.adresseDepart }} </p>
+                                <p>Adresse Arrivée : {{ course.adresseArrivee }} </p>
+                                <p>Description : {{ course.description }}</p>
+                                <p><strong>Prix : {{ course.prix }} €</strong></p>
+                            </div>
+                            <div class=" col-4 mt-5">
+                                <p class="text-center mt-4">
+                                    <a  href="{{ path('modif_course',{'id' : course.id }) }}" class="col-12 mt-2 btn btn-warning" role="button"><i class="fas fa-pencil-alt" style="color: white"></i> Modifier </a>
+                                    <a  href="{{ path('supprimer_course',{'id' : course.id }) }}" class=" col-12 btn btn-danger mt-2" role="button"> <i class="far fa-trash-alt"></i> Supprimer</a>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+{% endblock %}

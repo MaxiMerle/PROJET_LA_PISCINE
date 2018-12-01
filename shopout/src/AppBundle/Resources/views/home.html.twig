@@ -1,0 +1,77 @@
+{% extends '@App/base.html.twig' %}
+
+{# TITRE #}
+{% block titre %}Accueil{% endblock %}
+
+
+
+{# BLOCK 1 - IMAGE DE FOND AVEC BOUTONS #}
+{% block block1 %}
+    <div id="block1">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 text-center" >
+                    <h1>Commandez, c'est livré ! </h1>
+                    <h5>Plateforme de livraison collaborative entre particuliers.</h5>
+                    <div class="container">
+                        <a href="{{ path('ajout_course') }}"><button type="button" class="btn btn-danger btn-block">Se faire livrer une course</button></a><br>
+                        <a href="{{ path('courses') }}"><button type="button" class="btn btn-dark btn-block">Voir les courses disponibles</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{# BLOCK 2 - QUI-SOMMES-NOUS #}
+    <div id="block2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class=" col-md-12">
+                    <h2 class="mb-5">Qui sommes-nous ?</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                        proident, sunt in culpa.</p>
+                    <a href="{{ path('contact') }}"><button  style =" background-color: transparent;border: 1px solid #fff; " type="button" class="btn btn-secondary btn-lg mt-5">Nous contacter</button></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{# BLOCK 3 - ICONES #}
+    <div id="block3">
+        <div class="container-fluid">
+            <div class="row text-center">
+                    <div class="col-2 offset-1 mt-5 mb-5">
+                        <img src="{{ asset('assets/img/icon2.png') }}" alt="" width="40%" class="img-fluid">
+                        <h3>Choisissez votre commerce</h3>
+                    </div>
+                <div class=" col-2 offset-2 mt-5 mb-5">
+                    <img src="{{ asset('assets/img/icon3.png') }}" alt="" width="40%" class="img-fluid">
+                    <h3>Le shopeur va faire vos courses</h3>
+                </div>
+                <div class="col-2 offset-2 mt-5 mb-5">
+                    <img src="{{ asset('assets/img/icon1.png') }}" alt="" width="40%" class="img-fluid">
+                    <h3>Il vous livre chez vous !</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{# BLOCK 4 - IMAGE #}
+    <div id="block4">
+        <div class="container-fluid">
+            <div class="row text-center">
+                <div class="col-12">
+                    <img src="{{ asset('assets/img/ShopOut.png') }}" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

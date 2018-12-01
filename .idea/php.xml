@@ -43,6 +43,8 @@
       <path value="$PROJECT_DIR$/shopout/vendor/psr/link" />
       <path value="$PROJECT_DIR$/shopout/vendor/twig/extensions" />
       <path value="$PROJECT_DIR$/shopout/vendor/friendsofsymfony/user-bundle" />
+      <path value="$PROJECT_DIR$/shopout/vendor/knplabs/knp-components" />
+      <path value="$PROJECT_DIR$/shopout/vendor/knplabs/knp-paginator-bundle" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.5.0" />

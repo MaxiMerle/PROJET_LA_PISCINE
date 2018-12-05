@@ -51,6 +51,16 @@ h1 {
   background-color: $rouge;
 }
 
+
+
+.map {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
 /* ---------------------------- PAGE HOME -------------------------------------
 
 ------------------------------------------------------------------------------*/
@@ -136,7 +146,7 @@ h1 {
 
 #block-courses {
 
-  .thumbnail {
+  .thumbnail.course {
     border: 2px $rouge solid;
     border-radius: 5px;
 
@@ -149,6 +159,16 @@ h1 {
     }
 
   }
+
+  .blockvalide{
+
+
+    .thumbnail.course-valide{
+        border: 2px darkslategrey solid;
+    }
+
+  }
+
 }
 
 
@@ -159,19 +179,62 @@ h1 {
   height: 600px;
 
 
-
 }
 
-.courses-ajout{
+  .pagination > li > a,
+  .pagination > li > span{
+    color: $rouge;
+
+  }
+
+  .pagination > li > a:hover,
+  .pagination > li > span:hover,
+  .pagination > li > a:focus,
+  .pagination > li > span:focus{
+    background-color: $rouge;
+    color:white;
+  }
+  .pagination > .active > a,
+  .pagination > .active > span,
+  .pagination > .active > a:hover,
+  .pagination > .active > span:hover,
+  .pagination > .active > a:focus,
+  .pagination > .active > span:focus{
+    background-color: $rouge;
+    color: #ffffff;
+    border: 1px solid #dddddd;
+  }
+
+
+/* ---------------------------- PAGE AJOUT COURSE -------------------------------------
+
+------------------------------------------------------------------------------*/
+
+
+
+
+.courses-ajout {
 
   background-image: url("../../assets/img/ajout.jpeg");
   background-size: cover;
   height: 600px;
-
-
-
 }
 
+
+/* ---------------------------- PAGE COURSE VALIDEE -------------------------------------
+
+------------------------------------------------------------------------------*/
+
+
+
+#block-courses-valide{
+  .courses-valide{
+  background-image: url("../../assets/img/couse-valide.jpeg");
+  background-size: cover;
+  height: 600px;
+
+  }
+}
 
 
 /* ---------------------------- PAGE CONTACT -------------------------------------
@@ -203,8 +266,27 @@ h1 {
 
 
 
-
-
 /* ---------------------------- PAGE LOGIN -------------------------------------
 
 ------------------------------------------------------------------------------*/
+
+
+
+
+/* ---------------------------- PAGE USER EDIT -------------------------------------
+
+------------------------------------------------------------------------------*/
+
+
+#courses-user{
+
+  .courses-user{
+
+    border: 1px solid $rouge;
+
+  }
+
+}
+
+
+

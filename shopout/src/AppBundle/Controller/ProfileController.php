@@ -11,6 +11,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Courses;
 use FOS\UserBundle\Event\FilterUserResponseEvent;
 use FOS\UserBundle\Event\FormEvent;
 use FOS\UserBundle\Event\GetResponseUserEvent;
@@ -21,9 +22,11 @@ use FOS\UserBundle\Model\UserManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Symfony\Component\Form\Form;
 
@@ -40,7 +43,7 @@ class ProfileController extends Controller
 
     /**
      * Edit the user.
-     *
+     *@Route("/edit/user", name="user")
      * @param Request $request
      *
      * @return Response
@@ -51,7 +54,14 @@ class ProfileController extends Controller
         $this->formFactory = $this->get('fos_user.profile.form.factory');
         $this->userManager = $this->get('fos_user.user_manager');
 
+
+        $repository = $this->getDoctrine()->getRepository(Courses::class)->findAll();
+        $course = $repository;
+
         $user = $this->getUser();
+        $oldName = $user->getImage();
+
+
         if (!is_object($user) || !$user instanceof UserInterface) {
             throw new AccessDeniedException('This user does not have access to this section.');
         }
@@ -71,30 +81,34 @@ class ProfileController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
 
 
-            // Ajouter img dans un dossier + sauvegarde nom en BBD
-            $image = $form->getImage();
-            var_dump($image);die;
-            // créer un nom unique d'image pour l'image envoyé
-            $imageName = md5(uniqid()).'.'.$image->guessExtension();
-            // tente de sauvegarder l'image dans le dossier précisé
-            try {
-                $image->move($this->getParameter('imgUser_directory'), $imageName);
-            }
-                // en cas d'erreur il affiche le message contenu dans la variable $e
-            catch (FileException $e) {
-                echo $e->getMessage() . "message erreur contenu dans la variable e. On peut mettre autre chose que le echo par exmple un retour sur une autre page ou autre....";
-            }
-            // récupère le nom de l'image généré par le md5 pour le sauvegarder en BDD
-            $form->setImage($imageName);
+            if ($user->getImage() !== NULL ) {
+                $user = $form->getData();
+                $file = $user->getImage();
 
+                $imageName = md5(uniqid()) . "." . $file->guessExtension();
+
+                // tente de sauvegarder l'image dans le dossier précisé
+                try {
+                    $file->move(
+                        $this->getParameter("imgUser_directory"), $imageName);                } // en cas d'erreur il affiche le message contenu dans la variable $e
+                catch (FileException $e) {
+                    echo $e->getMessage() . "message erreur contenu dans la variable e. On peut mettre autre chose que le echo par exmple un retour sur une autre page ou autre....";
+                }
+
+                // récupère le nom de l'image généré par le md5 pour le sauvegarder en BDD
+                $user->setImage($imageName);
+            }else{
+                $user->setImage($oldName);
+            }
             // fin ajout image
+
             $event = new FormEvent($form, $request);
             $this->eventDispatcher->dispatch(FOSUserEvents::PROFILE_EDIT_SUCCESS, $event);
 
             $this->userManager->updateUser($user);
 
             if (null === $response = $event->getResponse()) {
-                $url = $this->generateUrl('fos_user_profile_show');
+                $url = $this->generateUrl('fos_user_profile_edit');
                 $response = new RedirectResponse($url);
             }
 
@@ -105,6 +119,38 @@ class ProfileController extends Controller
 
         return $this->render('@FOSUser/Profile/edit.html.twig', array(
             'form' => $form->createView(),
+            'course' => $course,
         ));
+    }
+
+
+
+
+    /**
+     *
+     * @Route("/supprimerCourseUser/{id}", name="supprimer_course_user")
+     * @param $id
+     * @return Response
+     */
+
+    public function supprCourseAction($id)
+    {
+
+        $repository = $this->getDoctrine()->getRepository(Courses::class);
+        $entityManager = $this->getDoctrine()->getManager();
+
+
+        $course = $repository->find($id);
+
+        $entityManager->remove($course);
+        $entityManager->flush();
+
+        $this->addFlash(
+            'notice_admin',
+            'Course bien supprimée ! '
+        );
+
+        return $this->redirectToRoute('user');
+
     }
 }

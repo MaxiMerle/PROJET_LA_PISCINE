@@ -17,9 +17,7 @@ class ProfileFormType extends AbstractType
     {
         $builder
         ->add('name', TextType::class, array('label' => 'form.name', 'translation_domain' => 'FOSUserBundle'))
-        ->add('adresse', TextType::class, array('label' => 'form.adresse', 'translation_domain' => 'FOSUserBundle'))
-        ->add('postal', IntegerType::class, array('label' => 'form.postal', 'translation_domain' => 'FOSUserBundle'))
-        ->add('image', FileType::class, array('label' => 'form.image', 'translation_domain' => 'FOSUserBundle','data_class' => null));
+        ->add('image', FileType::class, array('label' => 'form.image', 'translation_domain' => 'FOSUserBundle','data_class' => null, 'required'   => false,));
 
     }
 

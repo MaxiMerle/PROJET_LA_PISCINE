@@ -1,6 +1,6 @@
 @import url(_footer.css);
 @import url(owl.carousel.css);
-.TypoTitre, h1, #block1 h1, #block-courses .thumbnail h1, .titre h1 {
+.TypoTitre, h1, #block1 h1, #block-courses .thumbnail.course h1, .titre h1 {
   font-family: 'Permanent Marker', cursive;
   color: #e74c3c;
   font-size: 6vw; }
@@ -27,6 +27,13 @@ a:hover {
 
 .navbar-expand-lg .navbar-nav .dropdown-menu {
   background-color: #e74c3c; }
+
+.map {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%); }
 
 /* ---------------------------- PAGE HOME -------------------------------------
 
@@ -70,19 +77,53 @@ a:hover {
 /* ---------------------------- PAGE COURSES -------------------------------------
 
 ------------------------------------------------------------------------------*/
-#block-courses .thumbnail {
+#block-courses .thumbnail.course {
   border: 2px #e74c3c solid;
   border-radius: 5px; }
-  #block-courses .thumbnail a {
+  #block-courses .thumbnail.course a {
     color: white; }
+#block-courses .blockvalide .thumbnail.course-valide {
+  border: 2px darkslategrey solid; }
 
 .courses {
   background-image: url("../../assets/img/courses.jpeg");
   background-size: cover;
   height: 600px; }
 
+.pagination > li > a,
+.pagination > li > span {
+  color: #e74c3c; }
+
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+  background-color: #e74c3c;
+  color: white; }
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: #e74c3c;
+  color: #ffffff;
+  border: 1px solid #dddddd; }
+
+/* ---------------------------- PAGE AJOUT COURSE -------------------------------------
+
+------------------------------------------------------------------------------*/
 .courses-ajout {
   background-image: url("../../assets/img/ajout.jpeg");
+  background-size: cover;
+  height: 600px; }
+
+/* ---------------------------- PAGE COURSE VALIDEE -------------------------------------
+
+------------------------------------------------------------------------------*/
+#block-courses-valide .courses-valide {
+  background-image: url("../../assets/img/couse-valide.jpeg");
   background-size: cover;
   height: 600px; }
 
@@ -103,5 +144,10 @@ a:hover {
 /* ---------------------------- PAGE LOGIN -------------------------------------
 
 ------------------------------------------------------------------------------*/
+/* ---------------------------- PAGE USER EDIT -------------------------------------
+
+------------------------------------------------------------------------------*/
+#courses-user .courses-user {
+  border: 1px solid #e74c3c; }
 
 /*# sourceMappingURL=style.css.map */

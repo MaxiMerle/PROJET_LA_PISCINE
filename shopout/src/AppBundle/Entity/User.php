@@ -43,32 +43,6 @@ class User extends BaseUser
 
 
     /**
-     * @ORM\Column(type="string", length=255)
-     *
-     * @Assert\NotBlank(message="Please enter your adress.", groups={"Registration", "Profile"})
-     * @Assert\Length(
-     *     min=3,
-     *     max=255,
-     *     minMessage="The name is too short.",
-     *     maxMessage="The name is too long.",
-     *     groups={"Registration", "Profile"}
-     * )
-     */
-    protected $adresse;
-
-
-
-    /**
-     * @ORM\Column(type="integer")
-     *
-     * @Assert\NotBlank(message="Please enter your postal.", groups={"Registration", "Profile"})
-     *
-     */
-    protected $postal;
-
-
-
-    /**
      * @ORM\Column(type="string")
      */
     protected $image;
@@ -84,10 +58,11 @@ class User extends BaseUser
 
     /**
      * @var string
-     *
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Commentaires", mappedBy="user")
+
      */
 
-    private  $commentaires;
+    private $commentaires;
 
 
     /**
@@ -127,23 +102,6 @@ class User extends BaseUser
 
 
 
-
-    /**
-     * @return mixed
-     */
-    public function getAdresse()
-    {
-        return $this->adresse;
-    }
-
-    /**
-     * @param mixed $adresse
-     */
-    public function setAdresse($adresse)
-    {
-        $this->adresse = $adresse;
-    }
-
     /**
      * @return mixed
      */
@@ -176,24 +134,6 @@ class User extends BaseUser
     {
         $this->image = $image;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getPostal()
-    {
-        return $this->postal;
-    }
-
-    /**
-     * @param mixed $postal
-     */
-    public function setPostal($postal)
-    {
-        $this->postal = $postal;
-    }
-
-
 
 
 

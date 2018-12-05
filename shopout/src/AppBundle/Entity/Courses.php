@@ -22,12 +22,6 @@ class Courses
     private $id;
 
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="nom", type="string", length=255)
-     */
-    private $nom;
 
     /**
      * @Assert\GreaterThanOrEqual(
@@ -86,16 +80,60 @@ class Courses
     private $ville;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Commentaires", mappedBy="course")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Commentaires", mappedBy="course", cascade={"persist", "remove"}, orphanRemoval=true)
      */
     private $commentaires;
 
 
 
     /**
+
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="courses")
      */
     private $user;
+
+
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $validation;
+
+
+
+
+
+
+
+
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime('now');
+        $this->validation = false;
+    }
+
+
+
+    /**
+     * @return mixed
+     */
+    public function getValidation()
+    {
+        return $this->validation;
+    }
+
+    /**
+     * @param mixed $validation
+     */
+    public function setValidation($validation)
+    {
+        $this->validation = $validation;
+    }
+
+
+
+
+
 
     /**
      * @return mixed
@@ -165,30 +203,6 @@ class Courses
         return $this->id;
     }
 
-
-    /**
-     * Set nom
-     *
-     * @param string $nom
-     *
-     * @return Courses
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    /**
-     * Get nom
-     *
-     * @return string
-     */
-    public function getNom()
-    {
-        return $this->nom;
-    }
 
     /**
      * Set prix
@@ -277,10 +291,6 @@ class Courses
         return $this;
     }
 
-    public function __construct()
-    {
-        $this->createdAt = new \DateTime('now');
-    }
 
 
     /**

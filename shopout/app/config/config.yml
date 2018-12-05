@@ -63,11 +63,9 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: '%mailer_transport%'
-    host: '%mailer_host%'
+    transport: gmail
     username: '%mailer_user%'
     password: '%mailer_password%'
-    spool: { type: memory }
 
 sensio_framework_extra:
    router:
@@ -86,3 +84,14 @@ fos_user:
     profile:
            form:
                type: AppBundle\Form\ProfileFormType
+
+knp_paginator:
+    page_range: 5
+    default_options:
+        page_name: page
+        sort_field_name: sort
+        sort_direction_name: direction
+        distinct: true
+    template:
+        pagination: 'KnpPaginatorBundle:Pagination:twitter_bootstrap_v4_pagination.html.twig'
+        sortable: 'KnpPaginatorBundle:Pagination:sortable_link.html.twig'

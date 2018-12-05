@@ -21,11 +21,10 @@ class CoursesType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('nom')
             ->add('ville', EntityType::class,['class' => 'AppBundle:Villes','choice_label'=>'nom'])
             ->add('prix', IntegerType::class,array('attr' => ['placeholder' => 'Exemple 3€...']))
-            ->add('adresseDepart',TextType::class, array('attr' => ['placeholder' => 'Exemple 21 rue moliere...']))
-            ->add('adresseArrivee',TextType::class, array('attr' => ['placeholder' => 'Exemple 21 rue moliere...']))
+            ->add('adresseDepart',TextType::class, array('attr' => ['placeholder' => 'Entrez l\'adresse et le code postal']))
+            ->add('adresseArrivee',TextType::class, array('attr' => ['placeholder' => 'Entrez l\'adresse et le code postal']))
 
             ->add('dateLivraison', DateType::class, array('widget' => 'single_text', 'format' => 'yyyy-MM-dd',))
             ->add('description',TextareaType::class, array('attr' => ['row' => '3', 'placeholder' => 'Quels objets souhaitez-vous ?']))

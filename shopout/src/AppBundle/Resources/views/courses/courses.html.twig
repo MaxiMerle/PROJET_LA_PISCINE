@@ -33,6 +33,9 @@
     <div class="container" id="block-courses">
         <div class="row">
             <h3>Toutes les courses à  </h3>
+
+
+
             {% for ville in villes  %}
                </h3><a href="{{ path('ville',{'idVille' : ville.id }) }}"><h3>&nbsp; {{ ville.nom }} /</a></h3>
 
@@ -40,34 +43,71 @@
         </div>
         <div class="row mt-5 mb-5">
             {% for course in courses  %}
+                {% if course.validation == false %}
+
+
             <div class="col-sm-12 col-md-4 block mt-3">
-                <div class="thumbnail">
-                    <div style="width: 100%" class="map map-container"><iframe  scrolling="no" width="100%" height="200" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord=48.8653796,2.3362337&amp;q=21%20rue%20moliere+(My%20Business%20Name)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" marginheight="0" marginwidth="0"></iframe></div><br />
+                <div class="thumbnail course">
+                    <div style="width: 100%"><iframe scrolling="no" width="100%" height="200" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord={{ course.ville.nom }}&amp;q={{ course.adresseDepart }}&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" marginheight="0" marginwidth="0"></iframe></div><br />
                     <div class="caption p-2">
-                        <h3>{{ course.nom }}</h3>
                         <p>Publié le : {{ course.createdAt|localizeddate('none', 'none', null, null, 'd MMMM Y')}}</p>
                         <hr>
+                        <a href="#" class="badge  badge-lg badge-secondary text-center" style="background-color: #e74c3c;">Prix : {{ course.prix }} €</a> <a href="#" class="badge  badge-lg badge-dark text-center">Posté par : {{ course.user.username }}</a>
+                        <a href="#" class="badge  badge-lg text-center">Posté par : {{ course.user.username }}</a>
                         <p>Ville : {{ course.ville.nom }}</p>
                         <p>Date livraison :  {{ course.dateLivraison|localizeddate('none', 'none', null, null, 'd MMMM Y')}}</p>
                         <p>Départ : {{ course.adresseDepart }} </p>
                         <p>Arrivée : {{ course.adresseArrivee }} </p>
                         <p>Description : {{ course.description }}</p>
-                        <a href="#" class="badge  badge-lg badge-secondary">Prix : {{ course.prix }} €</a>
-                        <p class="text-center"><a href="{{ path('show_course',{'id' : course.id}) }}" class="btn btn-primary" role="button">Voir plus</a> <a href="#" class="btn btn-danger" role="button">Accepter la course</a></p>
+                        <p class="text-center">
+                            <a href="{{ path('show_course',{'id' : course.id}) }}" class="btn btn-dark" role="button">Voir plus</a>
+                            <a href="{{ path('accept_course',{'id' : course.id}) }}" class="btn" style="background-color: #e74c3c;" role="button">Accepter la course</a>
+                        </p>
                     </div>
                 </div>
             </div>
+                {% endif %}
             {% endfor %}
+
         </div>
+        <div class="row">
+            <div class="offset-4 col-6 text-center">
+                <div class="align-center">
+                    {{ knp_pagination_render(courses) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5 mb-5 ">
+            <h1 class="col-12 text-center">Courses terminées</h1>
+
+            {% for course in courses  %}
+                {% if course.validation == true %}
+
+
+                    <div class="col-sm-12 col-md-3 blockvalide mt-3">
+                        <div class="thumbnail course-valide">
+                            <div style="width: 100%"><iframe  class="map" scrolling="no" width="100%" height="200" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord={{ course.ville.nom }}&amp;q={{ course.adresseDepart }}&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" marginheight="0" marginwidth="0"></iframe></div><br />
+                            <div class="caption p-2">
+                                <a href="#" class="badge  badge-lg badge-secondary text-center">Prix : {{ course.prix }} €</a>
+                                <p>Ville : {{ course.ville.nom }}</p>
+                                <p>Effectué le :  {{ course.dateLivraison|localizeddate('none', 'none', null, null, 'd MMMM Y')}}</p>
+                                <p class="text-center">
+                                    <a href="{{ path('show_course',{'id' : course.id}) }}" class="btn btn-primary" role="button">Voir plus</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+        </div>
+
+
     </div>
 
 
-    <script>
-        $('.map-container')
-            .click(function(){
-                $(this).find('iframe').addClass('clicked')})
-            .mouseleave(function(){
-                $(this).find('iframe').removeClass('clicked')});
-    </script>
+
+
 
 {% endblock %}

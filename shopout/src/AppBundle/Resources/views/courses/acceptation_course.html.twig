@@ -1,0 +1,22 @@
+{% extends '@App/base.html.twig' %}
+
+{% block block1 %}
+    <div class="container-fluid" id="block-courses-valide">
+        <div class="row mb-5 courses-valide d-flex align-items-center">
+            <div class="col-12 text-center">
+                <h1>Course validée !</h1>
+                <h1>Merci !</h1>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>Un email de validation à été envoyé au client, et il va bientôt prendre contact avec vous afin de defenir les modalités de la course future, prevue le  <strong>{{ course.dateLivraison|localizeddate('none', 'none', null, null, 'd MMMM Y')}}, à {{course.Ville.nom }}</strong></h2>
+                <h2>Contactez-le a l'adresse email suivante : <strong><a href="">{{ course.user.email }}</a></strong></h2>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

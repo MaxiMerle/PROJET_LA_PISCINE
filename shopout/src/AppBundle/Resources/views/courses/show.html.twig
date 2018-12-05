@@ -40,7 +40,6 @@
                 <p>Posté par : <strong>{{ course.user.name }}</strong> </p>
             </div>
             <div class="col-4">Le :  <strong>{{ course.createdAt|localizeddate('none', 'none', null, null, 'd MMMM Y')}}</strong> </div>
-            <div class="col-4">A : <strong>{{ course.ville.nom }}</strong> </div>
         </div>
         <hr>
         <div class="row">
@@ -68,7 +67,7 @@
         <div class="row mt-3 mb-3">
             <div class="col-1">
                 <div class="thumbnail">
-                    <img class="img-fluid user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+                    <img class="img-fluid user-photo" src="{{ asset('img/' ~  commentaire.user.image) }}">
                 </div>
             </div>
             <div class="col-5">

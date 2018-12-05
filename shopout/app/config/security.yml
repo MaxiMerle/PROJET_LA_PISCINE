@@ -25,7 +25,14 @@ security:
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
                 always_use_default_target_path: false
-                default_target_path: /
+                default_target_path: /home
+            anonymous: true
+            logout:
+                target: /home
+
+
+
+
 
             logout:       true
             anonymous:    true

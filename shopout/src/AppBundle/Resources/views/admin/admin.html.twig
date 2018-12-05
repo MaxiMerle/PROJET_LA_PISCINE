@@ -30,16 +30,24 @@
                     <div class="">
                         <div class="row">
                             <div class="col-7 p-2">
-                                <h3>{{ course.nom }}</h3>
-                                <p>Ville : {{ course.ville.nom }}</p>
-                                <p>Date :  {{ course.dateLivraison|date('D d M Y')}}</p>
-                                <p>Adresse Départ : {{ course.adresseDepart }} </p>
-                                <p>Adresse Arrivée : {{ course.adresseArrivee }} </p>
-                                <p>Description : {{ course.description }}</p>
+                                {% if course.validation == true %}
+                                    <span class="badge badge-success badge-lg">Course acceptée</span>
+
+                                {% else %}
+                                    <span class="badge badge-info">Course en attente</span>
+                                {% endif %}
+                                <p>Ville : <strong>{{ course.ville.nom }}</strong></p>
+                                <p>Date :  <strong>{{ course.dateLivraison|localizeddate('none', 'none', null, null, 'd MMMM Y')}}</strong></p>
+                                <p>Adresse Départ : <strong>{{ course.adresseDepart }} </strong></p>
+                                <p>Adresse Arrivée : <strong>{{ course.adresseArrivee }} </strong></p>
+                                <p>Description : <strong>{{ course.description }}</strong></p>
                                 <p><strong>Prix : {{ course.prix }} €</strong></p>
                             </div>
                             <div class=" col-4 mt-5">
                                 <p class="text-center mt-4">
+                                     {% if course.validation == true %}
+                                    <a  href="{{ path('annuler_course',{'id' : course.id }) }}" class=" col-12 btn btn-info mt-2" role="button"> <i class="far fa-stop-alt"></i>Annuler la course</a>
+                                     {% endif %}
                                     <a  href="{{ path('modif_course',{'id' : course.id }) }}" class="col-12 mt-2 btn btn-warning" role="button"><i class="fas fa-pencil-alt" style="color: white"></i> Modifier </a>
                                     <a  href="{{ path('supprimer_course',{'id' : course.id }) }}" class=" col-12 btn btn-danger mt-2" role="button"> <i class="far fa-trash-alt"></i> Supprimer</a>
                                 </p>

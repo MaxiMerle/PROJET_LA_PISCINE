@@ -4,7 +4,12 @@
 
 
 {% block fos_user_content %}
-    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <h1>{{ 'registration.confirmed'|trans ({'%username%': user.username}) }}</h1>
+            <a href="{{ path('home') }}"><button class="btn btn-block btn-dark">Retour a l'accueil</button></a>
+        </div>
+    </div>
     {% if targetUrl %}
     <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
     {% endif %}

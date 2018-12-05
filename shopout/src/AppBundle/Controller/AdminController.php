@@ -47,7 +47,7 @@ class AdminController extends Controller
      * @return Response
      */
 
-    public function SupprLivreAction($id)
+    public function SupprCourseAction($id, \Swift_Mailer $mailer)
     {
 
         $repository = $this->getDoctrine()->getRepository(Courses::class);
@@ -55,8 +55,26 @@ class AdminController extends Controller
 
         $course = $repository->find($id);
 
+        $email = $course->getUser()->getEmail();
+
+
+        $message = (new \Swift_Message('Informations concernant votre course'))
+            ->setFrom('maximerle@gmail.com')
+            ->setTo($email)
+            ->setBody(
+                $this->renderView(
+                // app/Resources/views/Emails/registration.html.twig
+                    '@App/emails/suppression.html.twig',
+                    array('course' => $course)
+                ),
+                'text/html'
+            )
+
+        ;
+
         $entityManager->remove($course);
         $entityManager->flush();
+        $mailer->send($message);
 
         $this->addFlash(
             'notice',

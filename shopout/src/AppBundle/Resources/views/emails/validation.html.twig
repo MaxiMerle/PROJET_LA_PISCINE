@@ -4,7 +4,7 @@
     #block-courses-valide .courses-valide{
         background-image: url("https://images.unsplash.com/photo-1526367790999-0150786686a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80");
         background-size: cover;
-        height: 600px;
+        height: 500px;
 
     }
 
@@ -15,7 +15,7 @@
         font-family: 'Permanent Marker', sans-serif;
 
     }
-    h1 {
+    h3 {
         color: #e74c3c;
         font-size: 100px;
 
@@ -28,8 +28,8 @@
     <div class="container-fluid" id="block-courses-valide">
         <div class="row mb-5 courses-valide d-flex align-items-center">
             <div class="col-12 text-center">
-                <h1>Course validée !</h1>
-                <h1>Merci !</h1>
+                <h3>Course Acceptée  !</h3>
+                <h3>Merci !</h3>
 
             </div>
         </div>
@@ -37,8 +37,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
-                <p>Votre course à bien étée acceptée ! la livraison est prevue le  <strong>{{ course.dateLivraison|localizeddate('none', 'none', null, null, 'd MMMM Y')}}, à {{course.Ville.nom }}</strong></p>
-                <p>Contactez-le a l'adresse email suivante : <strong><a href="">{{ app.user.email }}</a></strong></p>
+                <p>Votre course à bien été acceptée ! La livraison est prevue le  <strong>{{ course.dateLivraison|localizeddate('none', 'none', null, null, 'd MMMM Y')}}, à {{course.Ville.nom }}</strong></p>
+                <p>Contactez votre shopper a l'adresse email suivante : <strong><a href="">{{ app.user.email }}</a></strong></p>
+                <p>Merci et à tres vite sur Shop'Out ! </p>
             </div>
         </div>
     </div>

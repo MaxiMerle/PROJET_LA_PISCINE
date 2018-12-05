@@ -50,14 +50,14 @@
                 <div class="thumbnail course">
                     <div style="width: 100%"><iframe scrolling="no" width="100%" height="200" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;coord={{ course.ville.nom }}&amp;q={{ course.adresseDepart }}&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" marginheight="0" marginwidth="0"></iframe></div><br />
                     <div class="caption p-2">
-                        <p>Publié le : {{ course.createdAt|localizeddate('none', 'none', null, null, 'd MMMM Y')}}</p>
+                        <span class="badge  badge-lg badge-secondary text-center" style="background-color: #e74c3c;"> Prix : {{ course.prix }} € </span>
+                        <span class="badge  badge-lg badge-dark text-center"> Posté par : {{ course.user.username }} </span>
+                        <span class="badge  badge-lg badge-info text-center"> À : {{ course.ville.nom }}</span>
                         <hr>
-                        <a href="#" class="badge  badge-lg badge-secondary text-center" style="background-color: #e74c3c;">Prix : {{ course.prix }} €</a> <a href="#" class="badge  badge-lg badge-dark text-center">Posté par : {{ course.user.username }}</a>
-                        <a href="#" class="badge  badge-lg text-center">Posté par : {{ course.user.username }}</a>
+                        <p>Publié le : {{ course.createdAt|localizeddate('none', 'none', null, null, 'd MMMM Y')}}</p>
+
                         <p>Ville : {{ course.ville.nom }}</p>
                         <p>Date livraison :  {{ course.dateLivraison|localizeddate('none', 'none', null, null, 'd MMMM Y')}}</p>
-                        <p>Départ : {{ course.adresseDepart }} </p>
-                        <p>Arrivée : {{ course.adresseArrivee }} </p>
                         <p>Description : {{ course.description }}</p>
                         <p class="text-center">
                             <a href="{{ path('show_course',{'id' : course.id}) }}" class="btn btn-dark" role="button">Voir plus</a>

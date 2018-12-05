@@ -28,7 +28,7 @@
                     <h1 class="text-center">Course n*{{ course.id }}</h1>
                     <button class="btn btn-outline-dark">Contacter le client</button>
                     <button class="btn btn-outline-success">Accepter la course</button>
-                    <h3 class="mt-3">Prix de la course : {{ course.prix }} € </h3>
+                    <h3 class="mt-3">Prix de la course : <span class="badge badge-danger text-center">{{ course.prix }} € </span></h3>
                     <h4>Livraison pour le  <strong>{{ course.dateLivraison|localizeddate('none', 'none', null, null, 'd MMMM Y ')}}</strong></h4>
                 </div>
             </div>

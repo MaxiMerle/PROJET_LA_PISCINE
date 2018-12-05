@@ -30,9 +30,9 @@
                     <div class="">
                         <div class="row">
                             <div class="col-7 p-2">
+                                    <span class="badge badge-dark badge-lg">Prenom : {{ course.user.name }} -- Pseudo : {{ course.user.username }}</span>
                                 {% if course.validation == true %}
                                     <span class="badge badge-success badge-lg">Course acceptée</span>
-
                                 {% else %}
                                     <span class="badge badge-info">Course en attente</span>
                                 {% endif %}
